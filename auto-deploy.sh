@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_COMPOSE_DIR=/usr/local/MUISample/Server/docker-compose.yml
+DOCKER_COMPOSE_DIR=/usr/local/MUISample/Server/docker-compose.yaml
 
 docker-compose -f "$DOCKER_COMPOSE_DIR" pull
 docker-compose -f "$DOCKER_COMPOSE_DIR" stop
