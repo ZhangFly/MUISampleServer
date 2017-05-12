@@ -9,6 +9,5 @@ RUN pip install SciPy
 
 ADD /src /code
 WORKDIR /code
-RUN mkdir /code/log
 
-ENTRYPOINT python server.py
+ENTRYPOINT python server.py &>>log/log
