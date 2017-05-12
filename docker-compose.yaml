@@ -1,0 +1,8 @@
+version: '2'
+services: 
+  mui-server:
+    build: .
+    ports:
+      - 1234:8080
+    volumes:
+      - /log /code/log

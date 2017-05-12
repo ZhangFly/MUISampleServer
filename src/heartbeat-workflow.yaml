@@ -1,0 +1,8 @@
+works:
+  - WaveletDecompose
+  - WaveletThreshold
+  - WaveletRecompose 
+  - Envelope
+  - BandPass
+  - Count
+# after: Logger
