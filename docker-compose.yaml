@@ -1,7 +1,7 @@
 version: '2'
 services: 
   mui-server:
-    build: .
+    image: registry.cn-hangzhou.aliyuncs.com/zfly/muisample:latest
     ports:
       - 1234:8080
     volumes:

@@ -8,7 +8,7 @@ RUN pip install pyYaml
 RUN pip install SciPy
 
 ADD /src /code
-RUN mkdir /code/log
 WORKDIR /code
+RUN mkdir /code/log
 
-ENTRYPOINT python server.py &>>log/log
+ENTRYPOINT python server.py
