@@ -4,5 +4,3 @@ services:
     image: registry.cn-hangzhou.aliyuncs.com/zfly/muisample:latest
     ports:
       - 1234:8080
-    volumes:
-      - /log /code/log
