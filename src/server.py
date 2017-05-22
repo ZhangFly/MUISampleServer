@@ -1,7 +1,7 @@
 import web
 import demjson
 import Heartbeat
-import uuid
+import os
 
 urls = ('/cal', 'cal')
 
@@ -16,7 +16,8 @@ class cal:
 
 class cal:
 	def GET(self):
-		return uuid.uuid1()
+		output = os.popen('ifconfig |grep inet')
+		return output.read()
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())
