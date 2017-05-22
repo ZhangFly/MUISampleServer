@@ -1,11 +1,14 @@
 import web
 import demjson
 import Heartbeat
-import os
+import uuid
 
 urls = ('/cal', 'cal')
 
 class cal:
+
+	ustr = None
+
 	def POST(self):
 		data = demjson.decode(web.input()['data'])
 		freq = float(web.input()['freq'])
@@ -14,10 +17,10 @@ class cal:
 		print 'heartbeat is ', heartbeat
 		return demjson.encode({'heartbeat':heartbeat})
 
-class cal:
 	def GET(self):
-		output = os.popen('ifconfig |grep inet')
-		return output.read()
+		if cal.ustr is None:
+			cal.ustr = uuid.uuid1()
+		return cal.ustr
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())
