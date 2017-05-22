@@ -3,9 +3,10 @@ import demjson
 import Heartbeat
 import uuid
 
-urls = ('/cal', 'cal')
+urls = ('/(.*.txt)', 'StaticFile',
+		'/cal', 'Cal')
 
-class cal:
+class Cal:
 
 	ustr = None
 
@@ -18,9 +19,15 @@ class cal:
 		return demjson.encode({'heartbeat':heartbeat})
 
 	def GET(self):
-		if cal.ustr is None:
-			cal.ustr = uuid.uuid1()
-		return cal.ustr
+		if Cal.ustr is None:
+			Cal.ustr = uuid.uuid1()
+		return Cal.ustr
+
+
+class StaticFile:  
+    def GET(self, file):
+    	print file
+        web.seeother('/static/0a4ca1d03672276fe02d0bca7e243ab9.txt');
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())
