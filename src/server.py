@@ -1,6 +1,7 @@
 import web
 import demjson
 import Heartbeat
+import uuid
 
 urls = ('/cal', 'cal')
 
@@ -12,6 +13,10 @@ class cal:
 		heartbeat = Heartbeat.cal(data, freq)
 		print 'heartbeat is ', heartbeat
 		return demjson.encode({'heartbeat':heartbeat})
+
+class cal:
+	def GET(self):
+		return uuid.uuid1()
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())

@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services: 
   mui-server:
     image: registry.cn-hangzhou.aliyuncs.com/zfly/muisample:latest
