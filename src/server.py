@@ -27,7 +27,7 @@ class Cal:
 class StaticFile:  
     def GET(self, file):
     	print file
-        web.seeother('/static/0a4ca1d03672276fe02d0bca7e243ab9.txt');
+        web.seeother('/static/' + file);
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())
