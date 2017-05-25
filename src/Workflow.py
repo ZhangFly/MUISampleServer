@@ -1,5 +1,5 @@
 from Support import load_yaml
-from Support import load_etcd
+# from Support import load_etcd
 import importlib
 
 def do_work(config, context):
@@ -42,9 +42,9 @@ def do_work(config, context):
 
 	return context.result
 
-def work_as_etcd(file_name, context):
-	config = load_etcd(key=file_name)
-	return do_work(config, context)
+# def work_as_etcd(file_name, context):
+# 	config = load_etcd(key=file_name)
+# 	return do_work(config, context)
 
 def work_as_yaml(file_name, context):
 	config = load_yaml(file_name=file_name)
