@@ -10,4 +10,4 @@ RUN pip install SciPy
 ADD /src /code
 WORKDIR /code
 
-ENTRYPOINT python server.py 80
+ENTRYPOINT python server.py 5150

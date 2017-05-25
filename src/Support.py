@@ -1,5 +1,6 @@
 import demjson
 import yaml
+import etcd
 
 class Context:
 
@@ -31,4 +32,10 @@ def load_yaml(file_name):
 	yaml_file = yaml.load(file)
 	file.close
 	return yaml_file
+
+def load_etcd(key):
+	client = etcd.Client(host='zhangfly.xin', protocol='http', port=2379, version_prefix='/v2')
+	etcd_data = demjson.decode(client.read(key).value)
+	print etcd_data
+	return etcd_data
 
