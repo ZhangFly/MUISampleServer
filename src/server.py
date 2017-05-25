@@ -2,9 +2,11 @@ import web
 import demjson
 import Heartbeat
 import uuid
+import Support
 
 urls = ('/(.*.txt)', 'StaticFile',
-		'/cal', 'Cal')
+		'/cal', 'Cal',
+		'/etcd', 'ETCD')
 
 class Cal:
 
@@ -28,6 +30,10 @@ class StaticFile:
     def GET(self, file):
     	print file
         web.seeother('/static/' + file);
+
+class ETCD:
+	def GET(self):
+		return Support.load_etcd('heartbeat')
 
 if __name__ == "__main__": 
     app = web.application(urls, globals())
